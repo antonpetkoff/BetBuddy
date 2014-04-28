@@ -1,16 +1,16 @@
 #ifndef STATSDIALOG_H
 #define STATSDIALOG_H
 
-#include "StatsWidget.h"
 #include <QDialog>
-#include <QString>
-#include <QGridLayout>
-#include <QGroupBox>
-#include <QSpinBox>
-#include <QSpacerItem>
-#include <QLabel>
-#include <QPushButton>
-#include <QDialogButtonBox>
+
+QT_BEGIN_NAMESPACE
+class QString;
+class QSpinBox;
+class QPushButton;
+class QLabel;
+class StatsWidget;
+class QDialogButtonBox;
+QT_END_NAMESPACE
 
 class StatsDialog : public QDialog
 {
@@ -22,8 +22,8 @@ public:
                          QWidget *parent = 0);
     ~StatsDialog();
 
-    double getHostValue() {return home->calculateValue();}
-    double getGuestValue() {return away->calculateValue();}
+    double getHostValue();
+    double getGuestValue();
 private slots:
     void numberOfMatchesChanged(int value);
     void editClicked();

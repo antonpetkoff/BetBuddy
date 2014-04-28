@@ -1,5 +1,9 @@
 #include "TeamValueDialog.h"
 
+#include "TeamValueWidget.h"
+#include <QGridLayout>
+#include <QDialogButtonBox>
+
 TeamValueDialog::TeamValueDialog(QWidget *parent) :
     QDialog(parent)
 {

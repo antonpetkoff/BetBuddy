@@ -2,22 +2,20 @@
 #define STATSWIDGET_H
 
 #include <QWidget>
-#include <QVector>
-#include <QGridLayout>
-#include <QLabel>
-#include <QLineEdit>
-#include <QSpinBox>
-#include <QHBoxLayout>
-#include <QComboBox>
-#include <QSpacerItem>
-#include <QPushButton>
+
+QT_BEGIN_NAMESPACE
+template <typename T> class QVector;
+class QGridLayout;
+class QComboBox;
+class QSpinBox;
+QT_END_NAMESPACE
 
 class StatsWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit StatsWidget(int matches = 5, QWidget *parent = 0);
-    int getNumberOfMatches() {return numberOfMatches;}
+    int getNumberOfMatches()        {return numberOfMatches;}
     void editMatchRows(int value);
     double calculateValue();
 private:

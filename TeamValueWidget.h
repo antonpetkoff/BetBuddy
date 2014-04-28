@@ -2,17 +2,17 @@
 #define TEAMVALUEWIDGET_H
 
 #include <QWidget>
-#include <QVector>
-#include <QLabel>
-#include <QLineEdit>
-#include <QDoubleSpinBox>
-#include <QSlider>
-#include <QGroupBox>
-#include <QPushButton>
-#include <QSpacerItem>
-#include <QFrame>
-#include <QGridLayout>
-#include <QDialogButtonBox>
+
+QT_BEGIN_NAMESPACE
+class QGridLayout;
+class QGroupBox;
+template <typename T> class QVector;
+class QLabel;
+class QLineEdit;
+class QDoubleSpinBox;
+class QSlider;
+class QPushButton;
+QT_END_NAMESPACE
 
 class TeamValueWidget : public QWidget
 {

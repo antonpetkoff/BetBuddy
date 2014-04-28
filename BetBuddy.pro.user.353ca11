@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 3.0.0, 2014-04-28T19:09:10. -->
+<!-- Written by QtCreator 3.0.0, 2014-04-26T10:36:21. -->
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -217,7 +217,7 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">BetBuddy</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/Git/BetBuddy/BetBuddy.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/Code/Qt/BetBuddy/BetBuddy.pro</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">BetBuddy.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
@@ -239,7 +239,7 @@
  </data>
  <data>
   <variable>ProjectExplorer.Project.Updater.EnvironmentId</variable>
-  <value type="QByteArray">{44ab590a-9203-40d2-9e85-899361d18545}</value>
+  <value type="QByteArray">{353ca11b-1901-4f9e-9ab6-0da2187e0b2e}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.Updater.FileVersion</variable>

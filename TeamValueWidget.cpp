@@ -1,5 +1,17 @@
 #include "TeamValueWidget.h"
 
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QVector>
+#include <QLabel>
+#include <QLineEdit>
+#include <QDoubleSpinBox>
+#include <QSlider>
+#include <QPushButton>
+#include <QSpacerItem>
+#include <QFrame>
+#include <QDialogButtonBox>
+
 TeamValueWidget::TeamValueWidget(QWidget *parent) :
     QWidget(parent)
 {

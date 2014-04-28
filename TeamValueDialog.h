@@ -1,11 +1,13 @@
 #ifndef TEAMVALUEDIALOG_H
 #define TEAMVALUEDIALOG_H
 
-#include "TeamValueWidget.h"
-
 #include <QDialog>
-#include <QGridLayout>
-#include <QDialogButtonBox>
+
+QT_BEGIN_NAMESPACE
+class QGridLayout;
+class TeamValueWidget;
+class QDialogButtonBox;
+QT_END_NAMESPACE
 
 class TeamValueDialog : public QDialog
 {

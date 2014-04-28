@@ -1,6 +1,14 @@
 #include "StatsDialog.h"
 
-#include "MainDialog.h"
+#include "StatsWidget.h"
+#include <QString>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QSpinBox>
+#include <QSpacerItem>
+#include <QLabel>
+#include <QPushButton>
+#include <QDialogButtonBox>
 
 StatsDialog::StatsDialog(const QString & host, const QString & guest, QWidget *parent) :
     QDialog(parent), hostName(host), guestName(guest)
@@ -64,6 +72,16 @@ StatsDialog::StatsDialog(const QString & host, const QString & guest, QWidget *p
 
 StatsDialog::~StatsDialog()
 {
+}
+
+double StatsDialog::getHostValue()
+{
+    return home->calculateValue();
+}
+
+double StatsDialog::getGuestValue()
+{
+    return away->calculateValue();
 }
 
 void StatsDialog::numberOfMatchesChanged(int value)

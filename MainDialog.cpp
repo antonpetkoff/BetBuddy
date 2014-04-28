@@ -1,9 +1,25 @@
 #include "MainDialog.h"
 
+#include "StatsDialog.h"
+#include "TeamValueDialog.h"
+#include <QString>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QLabel>
+#include <QSlider>
+#include <QPushButton>
+#include <QSpacerItem>
+#include <QFrame>
+#include <QDoubleSpinBox>
+#include <QCheckBox>
+#include <QMessageBox>
+
 MainDialog::MainDialog(const QString &host, const QString &guest, QWidget *parent)
-    : hostName("<b>"+host+"</b>"), guestName("<b>"+guest+"</b>"), QDialog(parent)
+    : QDialog(parent), hostName("<b>"+host+"</b>"), guestName("<b>"+guest+"</b>")
 {
 // initialization
+    teamValueDialog = new TeamValueDialog();
+    statsDialog = new StatsDialog();
     teamValueWeight = 0.33;
     statsWeight = 0.33;
     hostFactorWeight = 0.33;
@@ -175,19 +191,19 @@ void MainDialog::distributeFactorsWeight()
 
 void MainDialog::teamValueClicked()
 {
-    if(teamValueDialog.exec() == Accepted)
+    if(teamValueDialog->exec() == Accepted)
     {
-        teamValueSpinHost->setValue(teamValueDialog.getHostValue() / (teamValueDialog.getHostValue() + teamValueDialog.getGuestValue()) * 10.0f);
-        teamValueSpinGuest->setValue(teamValueDialog.getGuestValue() / (teamValueDialog.getHostValue() + teamValueDialog.getGuestValue()) * 10.0f);
+        teamValueSpinHost->setValue(teamValueDialog->getHostValue() / (teamValueDialog->getHostValue() + teamValueDialog->getGuestValue()) * 10.0f);
+        teamValueSpinGuest->setValue(teamValueDialog->getGuestValue() / (teamValueDialog->getHostValue() + teamValueDialog->getGuestValue()) * 10.0f);
     }
 }
 
 void MainDialog::statsClicked()
 {
-    if(statsDialog.exec() == Accepted)
+    if(statsDialog->exec() == Accepted)
     {
-        statsSpinHost->setValue( statsDialog.getHostValue() / (statsDialog.getHostValue() + statsDialog.getGuestValue()) * 10.0f );
-        statsSpinGuest->setValue( statsDialog.getGuestValue() / (statsDialog.getHostValue() + statsDialog.getGuestValue()) * 10.0f );
+        statsSpinHost->setValue( statsDialog->getHostValue() / (statsDialog->getHostValue() + statsDialog->getGuestValue()) * 10.0f );
+        statsSpinGuest->setValue( statsDialog->getGuestValue() / (statsDialog->getHostValue() + statsDialog->getGuestValue()) * 10.0f );
     }
 }
 
@@ -206,4 +222,20 @@ void MainDialog::calculateClicked()
     guestPointsLabel->setText(QString::number(guestPoints,'f',1));
     hostChanceLabel->setText(QString::number(hostChance * 100.0,'f',1) + "%");
     guestChanceLabel->setText(QString::number(guestChance * 100.0,'f',1) + "%");
+}
+
+// private slots:
+void MainDialog::changeTeamValueWeight(int value)
+{
+    teamValueWeightLabel->setText(QString::number(value) + "%");
+}
+
+void MainDialog::changeStatsWeight(int value)
+{
+    statsWeightLabel->setText(QString::number(value) + "%");
+}
+
+void MainDialog::changeHostFactorWeight(int value)
+{
+    hostFactorWeightLabel->setText(QString::number(value) + "%");
 }

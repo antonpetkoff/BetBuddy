@@ -1,21 +1,20 @@
 #ifndef MAINDIALOG_H
 #define MAINDIALOG_H
 
-#include "StatsDialog.h"
-#include "TeamValueDialog.h"
 #include <QDialog>
-#include <QString>
-#include <QGridLayout>
-#include <QGroupBox>
-#include <QLabel>
-#include <QSlider>
-#include <QPushButton>
-#include <QSpacerItem>
-#include <QFrame>
-#include <QDoubleSpinBox>
-#include <QCheckBox>
-#include <QMessageBox>
-#include <QException>
+
+QT_BEGIN_NAMESPACE
+class StatsDialog;
+class TeamValueDialog;
+class QString;
+class QGridLayout;
+class QGroupBox;
+class QLabel;
+class QSlider;
+class QPushButton;
+class QDoubleSpinBox;
+class QCheckBox;
+QT_END_NAMESPACE
 
 class MainDialog : public QDialog
 {
@@ -27,9 +26,9 @@ public:
                QWidget *parent = 0);
     ~MainDialog();
 private slots:
-    void changeTeamValueWeight(int value)   {teamValueWeightLabel->setText(QString::number(value) + "%");}
-    void changeStatsWeight(int value)       {statsWeightLabel->setText(QString::number(value) + "%");}
-    void changeHostFactorWeight(int value)  {hostFactorWeightLabel->setText(QString::number(value) + "%");}
+    void changeTeamValueWeight(int value);
+    void changeStatsWeight(int value);
+    void changeHostFactorWeight(int value);
     void distributeFactorsWeight();
 
     void teamValueClicked();
@@ -42,7 +41,7 @@ private:
     QGridLayout *evaluationLayout;
     QGroupBox *evaluationGroup;
 
-    TeamValueDialog teamValueDialog;
+    TeamValueDialog *teamValueDialog;
     QPushButton *teamValueButton;
     QDoubleSpinBox *teamValueSpinHost;
     QDoubleSpinBox *teamValueSpinGuest;
@@ -51,7 +50,7 @@ private:
     QCheckBox *teamValueCheck;
     double teamValueWeight;  // stored as % in decimal form
 
-    StatsDialog statsDialog;
+    StatsDialog *statsDialog;
     QPushButton *statsButton;
     QDoubleSpinBox *statsSpinHost;
     QDoubleSpinBox *statsSpinGuest;

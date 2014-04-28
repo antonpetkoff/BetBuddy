@@ -1,5 +1,15 @@
 #include "StatsWidget.h"
 
+#include <QVector>
+#include <QGridLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QSpinBox>
+#include <QHBoxLayout>
+#include <QComboBox>
+#include <QSpacerItem>
+#include <QPushButton>
+
 StatsWidget::StatsWidget(int matches, QWidget *parent) :
     QWidget(parent), numberOfMatches(matches)
 {
